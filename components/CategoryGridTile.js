@@ -1,11 +1,12 @@
 import { Pressable, View, Text, StyleSheet } from 'react-native';
+import { useNavigation } from '@react-navigation/native';
 
+export const CategoryGridTile = ({ item }) => {
 
-export const CategoryGridTile = ({ item, navigation }) => {
-
+    const navigation = useNavigation();
 
     function handleCategorySelect() {
-        navigation.navigate('MealOverview');
+        navigation.navigate('MealOverview', { categoryId: item.id });
     }
 
 
